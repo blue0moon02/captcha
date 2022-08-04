@@ -293,15 +293,14 @@ func generateRandomLineImage(width, height, count int, opts ...map[string]interf
 }
 
 func distortImage() {
-
+	return
 }
 
 func randBool() bool {
 	if rand.Intn(2) == 0 {
 		return true
-	} else {
-		return false
 	}
+	return false
 }
 
 func randFloat(min, max float64) float64 {
