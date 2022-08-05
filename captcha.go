@@ -30,15 +30,12 @@ func GenerateCaptchaImage(width, height int, fontPath string, opts ...map[string
 			switch k {
 			case "bgColor":
 				bgColor = v.(color.RGBA)
-				break
 
 			case "textCount":
 				textCount = v.(int)
-				break
 
 			case "lineCount":
 				lineCount = v.(int)
-				break
 			}
 		}
 	}
@@ -80,27 +77,21 @@ func generateRandomTextImage(width, height, count int, fontPath string, opts ...
 			switch k {
 			case "fontSize":
 				fontSize = v.(float64)
-				break
 
 			case "textColor":
 				textColor = v.(color.RGBA)
-				break
 
 			case "textMoveRange":
 				moveRange = v.([2]float64)
-				break
 
 			case "textRandomColorMode":
 				randomColorMode = v.(bool)
-				break
 
 			case "textRandomAlphaMode":
 				randomAlphaMode = v.(bool)
-				break
 
 			case "arrText":
 				arrText = v.([]rune)
-				break
 			}
 		}
 	}
@@ -139,6 +130,7 @@ func generateRandomTextImage(width, height, count int, fontPath string, opts ...
 	return dc.Image().(*image.RGBA), key
 }
 
+/*
 func generateDummyTextImage(width, height, count int, fontPath string, opts ...map[string]interface{}) *image.RGBA {
 	if width <= 0 || height <= 0 || count <= 0 {
 		panic("A negative number or zero was entered")
@@ -164,27 +156,21 @@ func generateDummyTextImage(width, height, count int, fontPath string, opts ...m
 			switch key {
 			case "fontSize":
 				fontSize = value.(float64)
-				break
 
 			case "textColor":
 				textColor = value.(color.RGBA)
-				break
 
 			case "textMoveRange":
 				moveRange = value.([2]float64)
-				break
 
 			case "textRandomColorMode":
 				randomColorMode = value.(bool)
-				break
-
+				
 			case "textRandomAlphaMode":
 				randomAlphaMode = value.(bool)
-				break
 
 			case "arrText":
 				arrText = value.([]rune)
-				break
 			}
 		}
 	}
@@ -217,6 +203,7 @@ func generateDummyTextImage(width, height, count int, fontPath string, opts ...m
 
 	return dc.Image().(*image.RGBA)
 }
+*/
 
 func generateRandomLineImage(width, height, count int, opts ...map[string]interface{}) *image.RGBA {
 	if width <= 0 || height <= 0 || count <= 0 {
@@ -236,19 +223,15 @@ func generateRandomLineImage(width, height, count int, opts ...map[string]interf
 			switch key {
 			case "lineThickness":
 				lineThickness = value.(float64)
-				break
 
 			case "lineColor":
 				lineColor = value.(color.RGBA)
-				break
 
 			case "lineRandomColorMode":
 				randomColorMode = value.(bool)
-				break
 
 			case "lineRandomAlphaMode":
 				randomAlphaMode = value.(bool)
-				break
 			}
 		}
 	}
@@ -292,9 +275,10 @@ func generateRandomLineImage(width, height, count int, opts ...map[string]interf
 	return dst
 }
 
+/*
 func distortImage() {
-	return
 }
+*/
 
 func randBool() bool {
 	if rand.Intn(2) == 0 {
